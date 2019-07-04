@@ -8,6 +8,7 @@ import { PropertyService } from './property.service';
 @Module({
     imports:[MongooseModule.forFeature([{ name: 'Property', schema: PropertySchema }])],
     controllers: [PropertyController],
+    exports:[PropertyService],
     providers: [PropertyService],
 })
 export class PropertyModule {

@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { create } from 'domain';
+import { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
+import { Property } from './interface/property.interface';
 
 @Injectable()
 export class PropertyService {
-    constructor(){}
+    //constructor(@InjectModel('Property') private readonly propertyModel: Model<Property>){}
 
 }

@@ -1,4 +1,5 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
+import { CreatePropertyDTO } from './dto/property.dto';
 
 @Controller('property')
 export class PropertyController {
@@ -7,7 +8,7 @@ export class PropertyController {
         return 'all the properties around lae';
     }
     @Post()
-    create(){
-        return 'all the posted stuff';
+    create(@Body(name) createPropertyDTO:CreatePropertyDTO){
+        return `${createPropertyDTO.name}`;
     }
 }
