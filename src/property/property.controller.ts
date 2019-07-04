@@ -12,12 +12,12 @@ export class PropertyController {
         return `${createPropertyDTO.name}`;
     }
 
-    @Put()
+    @Put(':id')
     update(@Param('id') id):String{
-        return `${id}`;
+        return `${id} was updated by Heroku`;
     }
-    @Delete()
+    @Delete(':id')
     delete(@Param('id') id ):String{
-        return `${id}`;
+        return `${id} was deleted by heroku`;
     }
 }
