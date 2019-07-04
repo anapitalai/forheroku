@@ -3,5 +3,6 @@ import { create } from 'domain';
 
 @Injectable()
 export class PropertyService {
+    constructor(){}
 
 }

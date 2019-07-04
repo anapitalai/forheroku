@@ -7,7 +7,7 @@ import { PropertyController } from './property/property.controller';
 import { PropertyModule } from './property/property.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://alois:raliku2019>@ds347467.mlab.com:47467/raliku'),PropertyModule],
+  imports: [MongooseModule.forRoot('mongodb://alois:raliku2019@ds347467.mlab.com:47467/raliku'),PropertyModule],
   controllers: [AppController, PropertyController],
   providers: [AppService, PropertyService],
 })
