@@ -5,6 +5,9 @@ import { Property } from './interface/property.interface';
 
 @Injectable()
 export class PropertyService {
-    //constructor(@InjectModel('Property') private readonly propertyModel: Model<Property>){}
+constructor(@InjectModel('Property') private readonly propertyModel: Model<Property>){}
+
+async get(){}
+async create(){}
 
 }

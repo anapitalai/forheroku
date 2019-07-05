@@ -11,8 +11,4 @@ import { PropertyService } from './property.service';
     exports:[PropertyService],
     providers: [PropertyService],
 })
-export class PropertyModule {
-    async get(){
-        //return await this.model.find();
-    }
-}
+export class PropertyModule {}
