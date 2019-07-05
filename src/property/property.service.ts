@@ -18,9 +18,10 @@ async create(property:Property):Promise<Property>{
 }
   
 
-async update(property:Property):Promise<Property>{
-    return await this.propertyModel.findByIdAndUpdate(property,{new:true});
+async update(id:string,property:Property):Promise<Property>{
+    return await this.propertyModel.findByIdAndUpdate(id,property,{new:true});
  }
+ 
  
    async delete(id:string):Promise<Property>{
      return await this.propertyModel.findByIdAndRemove(id);

@@ -25,7 +25,7 @@ export class PropertyController {
 
 
     @Delete(':id')
-    purge(@Param('id') id):Promise<Property> {
+    delete(@Param('id') id):Promise<Property> {
         return this.propertyService.delete(id);
     }
 
