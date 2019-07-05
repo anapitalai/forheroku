@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { UserService } from 'src/shared/user/user.service';
+import { UserService } from '../shared/user/user.service';
 import { Payload } from './interface/payload.interface';
 import config from 'src/config/keys';
 import { sign } from 'jsonwebtoken';
