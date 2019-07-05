@@ -18,9 +18,8 @@ export class PropertyController {
 
     @Put(':id')
     //@UseInterceptors(FileInterceptor('images'))
-    async update(@Param('id') id,@Body() property:Property):Promise<Property>{
-    console.log(property);
-    return this.propertyService.update(id);
+    async update(@Param('id') id,@Body() updatePropertyDTO:CreatePropertyDTO):Promise<Property>{
+    return this.propertyService.update(id,updatePropertyDTO);
   }
 
 
