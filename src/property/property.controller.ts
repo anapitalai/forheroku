@@ -9,7 +9,7 @@ export class PropertyController {
     constructor(private propertyService:PropertyService){}
     @Get()
     get(){
-        return 'all the properties around lae';
+        return this.propertyService.get();
     }
     @Post()
     create(@Body() createPropertyDTO:CreatePropertyDTO):Promise<Property>{

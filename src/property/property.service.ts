@@ -7,7 +7,11 @@ import { Property } from './interface/property.interface';
 export class PropertyService {
 constructor(@InjectModel('Property') private readonly propertyModel: Model<Property>){}
 
-async get(){}
+async get():Promise<Property[]> {
+    return await this.propertyModel.find();
+}
+
+
 async create(property:Property):Promise<Property>{
     const newProperty=new this.propertyModel(property);
     return await newProperty.save();
