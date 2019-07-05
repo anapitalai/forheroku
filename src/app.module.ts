@@ -17,6 +17,6 @@ import { StationeryService } from './stationery/stationery.service';
 @Module({
   imports: [MongooseModule.forRoot(config.MONGO_URI),PropertyModule, StationeryModule, AuthModule, UserModule],
   controllers: [AppController, PropertyController, AuthController],
-  providers: [AppService, AuthService, UserService],
+  providers: [AppService, AuthService],
 })
 export class AppModule {}
