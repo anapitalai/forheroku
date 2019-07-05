@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserSchema } from './schema/user.schema';
-import { UserService } from 'src/shared/user/user.service';
+import { UserService } from '../../shared/user/user.service';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { HttpExceptionFilter } from '../http-exception.filter';
 import { LoggingInterceptor } from '../logging.interceptor';
