@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import {Model} from 'mongoose';
-import { Property } from 'src/property/interface/property.interface';
 import { Stationery } from './interface/stationery.interface';
 
 @Injectable()
