@@ -5,9 +5,10 @@ import { AppService } from './app.service';
 import { PropertyService } from './property/property.service';
 import { PropertyController } from './property/property.controller';
 import { PropertyModule } from './property/property.module';
+import config from './config/keys';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://alois:raliku2019@ds347467.mlab.com:47467/raliku'),PropertyModule],
+  imports: [MongooseModule.forRoot(config.MONGO_URI),PropertyModule],
   controllers: [AppController, PropertyController],
   providers: [AppService, PropertyService],
 })
