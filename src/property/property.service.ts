@@ -8,6 +8,9 @@ export class PropertyService {
 constructor(@InjectModel('Property') private readonly propertyModel: Model<Property>){}
 
 async get(){}
-async create(){}
+async create(property:Property):Promise<Property>{
+    const newProperty=new this.propertyModel(property);
+    return await newProperty.save();
+}
 
 }

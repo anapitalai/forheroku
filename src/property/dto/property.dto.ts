@@ -1,7 +1,8 @@
 export class CreatePropertyDTO {
-    readonly id: number;
+    readonly id?: string;
     readonly name: string;
     readonly proptype: string;
-    readonly price: string;
-    readonly images: string;
+    readonly price: number;
+    readonly images?: string;
+    readonly created:Date;
 }
