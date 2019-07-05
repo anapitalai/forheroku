@@ -25,9 +25,9 @@ export class AuthController {
       }
     
       @Post('register')
-      @UseInterceptors(FileInterceptor('image'))
-      async register(@Body() userDTO: CreateRegisterDTO,@UploadedFile('file') file) {
-        const user = await this.userService.create(userDTO,file);
+      //@UseInterceptors(FileInterceptor('image'))
+      async register(@Body() userDTO: CreateRegisterDTO) {
+        const user = await this.userService.create(userDTO);
         const payload: Payload = {
           username: user.username,
           image: user.image,
@@ -40,13 +40,13 @@ export class AuthController {
     
     
       @Put('update/:id')
-      @UseInterceptors(FileInterceptor('image'))
-      async update(@Param('id') id,@Body() registerDTO:CreateRegisterDTO,@UploadedFile('file') file){
-        console.log(file.path,'from update endpoint from controller');
-        const imagePath = file.path;
+     // @UseInterceptors(FileInterceptor('image'))
+      async update(@Param('id') id,@Body() registerDTO:CreateRegisterDTO){
+       // console.log(file.path,'from update endpoint from controller');
+       // const imagePath = file.path;
         //const {image} = registerDTO;
       
-      return this.userService.update(id,registerDTO,file);
+      return this.userService.update(id,registerDTO);
     }
     
 }

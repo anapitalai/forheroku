@@ -11,7 +11,7 @@ import { User } from './interface/user.interface';
 export class UserService {
     constructor(@InjectModel('User') private userModel: Model<User>) {}
 
-    async create(userDTO: CreateRegisterDTO,file) {
+    async create(userDTO: CreateRegisterDTO) {
       const { username } = userDTO;
       console.log(username);
       const user = await this.userModel.findOne({ username });
@@ -21,10 +21,10 @@ export class UserService {
       //addedby sly
       const password = userDTO.password;
       console.log(password);
-      const imgPath = file.path;
-      console.log(imgPath);
+      //const imgPath = file.path;
+     // console.log(imgPath);
       //ends here
-      const createdUser = new this.userModel({username:username,password:password,image:imgPath});
+      const createdUser = new this.userModel({username:username,password:password});
       await createdUser.save();
       return this.sanitizeUser(createdUser);
     }
@@ -61,16 +61,16 @@ export class UserService {
       // return user.depopulate('password');
     }
   
-    async update(id:string,user:CreateRegisterDTO,file){
-      console.log(file.path);
+    async update(id:string,user:CreateRegisterDTO){
+      //console.log(file.path);
       const username = user.username;
-      const imagePath = file.path;
+      //const imagePath = file.path;
       const password = user.password;
       console.log(password,'update password');
-      const imgPath = file.path;
-      console.log(imgPath,'update path');
+      //const imgPath = file.path;
+      //console.log(imgPath,'update path');
          
-      return await this.userModel.findByIdAndUpdate(id,{username,image:imgPath},{new:true});
+      return await this.userModel.findByIdAndUpdate(id,{username},{new:true});
       
   
   
