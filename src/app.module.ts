@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { UserService } from './shared/user/user.service';
 import { UserModule } from './shared/user/user.module';
 import config from './config/keys';
+import { StationeryService } from './stationery/stationery.service';
 
 @Module({
   imports: [MongooseModule.forRoot(config.MONGO_URI),PropertyModule, StationeryModule, AuthModule, UserModule],
