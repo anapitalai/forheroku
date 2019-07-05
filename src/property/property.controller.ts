@@ -17,11 +17,16 @@ export class PropertyController {
     }
 
     @Put(':id')
-    update(@Param('id') id):String{
-        return `${id} was updated by Heroku`;
-    }
+    //@UseInterceptors(FileInterceptor('images'))
+    async update(@Param('id') id,@Body() property:Property):Promise<Property>{
+    console.log(property);
+    return this.propertyService.update(id);
+  }
+
+
     @Delete(':id')
-    delete(@Param('id') id ):String{
-        return `${id} was deleted by heroku`;
+    purge(@Param('id') id):Promise<Property> {
+        return this.propertyService.delete(id);
     }
+
 }

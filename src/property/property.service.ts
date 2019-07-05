@@ -16,5 +16,13 @@ async create(property:Property):Promise<Property>{
     const newProperty=new this.propertyModel(property);
     return await newProperty.save();
 }
+  
 
+async update(property:Property):Promise<Property>{
+    return await this.propertyModel.findByIdAndUpdate(property,{new:true});
+ }
+ 
+   async delete(id:string):Promise<Property>{
+     return await this.propertyModel.findByIdAndRemove(id);
+   }
 }
