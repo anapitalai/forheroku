@@ -8,6 +8,7 @@ import { sign } from 'jsonwebtoken';
 @Injectable()
 export class AuthService {
     constructor(private userService: UserService) {}
+    
 
     async signPayload(payload: Payload) {
       return sign(payload, key.SECRET_KEY, { expiresIn: '12h' });

@@ -10,6 +10,9 @@ import { User } from './interface/user.interface';
 @Injectable()
 export class UserService {
     constructor(@InjectModel('User') private userModel: Model<User>) {}
+    async get(){
+     return  await this.userModel.find();
+    }
 
     async create(userDTO: CreateRegisterDTO) {
       const { username } = userDTO;

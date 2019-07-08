@@ -1,4 +1,4 @@
-import { Controller, Post, Body, UseInterceptors, UploadedFile, Put, Param } from '@nestjs/common';
+import { Controller, Post, Body, UseInterceptors, UploadedFile, Put, Param, Get } from '@nestjs/common';
 import { UserService } from '../shared/user/user.service';
 import { AuthService } from './auth.service';
 import { Payload } from './interface/payload.interface';
@@ -12,7 +12,12 @@ export class AuthController {
         private userService: UserService,
         private authService: AuthService,
       ) {}
-    
+
+      @Get()
+      get(){
+        return this.userService.get();
+      }
+       
       @Post('login')
       async login(@Body() userDTO: CreateLoginDTO) {
         const user = await this.userService.findByLogin(userDTO);
